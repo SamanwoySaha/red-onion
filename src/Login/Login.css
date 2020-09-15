@@ -1,0 +1,18 @@
+.login {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 400px;
+    margin: 20px auto;
+}
+
+.login-logo {
+    width: 320px;
+    margin: 50px 0;
+}
+
+.login-submit-btn {
+    background-color: rgba(255, 2, 2, 0.788);
+    color: white;
+    font-size: 16px;
+}

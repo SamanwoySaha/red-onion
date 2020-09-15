@@ -7,6 +7,7 @@ import IconButton from '@material-ui/core/IconButton';
 import './Header.css';
 import { Container } from '@material-ui/core';
 import ShoppingCartOutlinedIcon from '@material-ui/icons/ShoppingCartOutlined';
+import { Link } from 'react-router-dom';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -35,11 +36,13 @@ const Header = () => {
 
     return (
         <div className={classes.root}>
-            <AppBar position="static" className={classes.background} disableElevation>
+            <AppBar position="static" className={classes.background}>
                 <Container fixed>
                     <Toolbar>
                         <IconButton edge="start" aria-label="menu">
-                            <img className="logo" src="https://i.ibb.co/0yjGfSD/logo2.png" alt="logo2" />
+                            <Link to="/">
+                                <img className="logo" src="https://i.ibb.co/0yjGfSD/logo2.png" alt="logo2" />
+                            </Link>
                         </IconButton>
                         <ShoppingCartOutlinedIcon className={classes.cartIcon} />
                         <Button style={btnSpacing}>Login</Button>

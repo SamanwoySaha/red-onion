@@ -1,0 +1,47 @@
+.shipping-info{
+    margin: 40px 0px;
+    display: flex;
+    align-items: center;
+}
+
+.route-map {
+    width: 80%;
+    border-radius: 20px;
+}
+
+.shipping-info-text {
+    padding: 40px;
+    background-color:#F5F5F5;
+    border-radius: 10px !important;
+}
+
+.icon {
+    width: 30%;
+}
+
+.timeline {
+    margin: 20px auto;
+    background-color: white !important;
+    border-radius: 10px !important;
+    padding: 20px !important;
+}
+
+.user-info {
+    background-color: white;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    margin: 20px 0;
+}
+
+.user-icon {
+    width: 20%;
+    margin-right: 20px;
+}
+
+.contact-btn {
+    width: 100%;
+    margin-top: 10px !important;
+    padding: 10px 0 !important;
+}

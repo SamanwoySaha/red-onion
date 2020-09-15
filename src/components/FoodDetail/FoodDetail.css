@@ -1,0 +1,33 @@
+.title {
+    font-family: 'Segoe UI' !important;
+    font-weight: bold !important;
+    font-size: 45px !important;
+}
+
+.price {
+    font-family: 'Segoe UI' !important;
+    font-weight: bold !important;
+    font-size: 40px !important;
+    padding-top: 20px !important;
+}
+
+.addToCartBtn {
+    padding: 10px 40px !important;
+    margin-top: 20px !important;
+    border-radius: 30px !important;
+}
+
+.count {
+    display: inline-block !important;
+    border-radius: 30px !important;
+    margin: 0px 20px !important;
+    padding: 5px 0px !important;
+    border: 1px solid lightgrey !important;
+    font-weight: normal;
+    font-size: 30px !important;
+}
+
+.count-btn {
+    padding: 0px 25px;
+    cursor: pointer;
+}
