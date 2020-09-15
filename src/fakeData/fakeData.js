@@ -48,95 +48,101 @@ const fakeData = [
         imageUrl: 'https://i.ibb.co/C76FmG2/breakfast1.png'
     },
     {
-        id: 1, 
-        name: 'Bagel and cream cheese',
+        id: 7, 
+        name: 'Healthy Meal Plan',
         description: 'How we dream about your future',
-        price: 6.99,
-        category: 'breakfast'
+        price: 23.99,
+        category: 'lunch',
+        imageUrl: 'https://i.ibb.co/Byq4Fzv/lunch6.png'
     },
     {
-        id: 1, 
-        name: 'Bagel and cream cheese',
+        id: 8, 
+        name: 'Fried Chicken Bento',
         description: 'How we dream about your future',
-        price: 6.99,
-        category: 'breakfast'
+        price: 9.99,
+        category: 'lunch',
+        imageUrl: 'https://i.ibb.co/nCzJRF5/lunch5.png'
     },
     {
-        id: 1, 
-        name: 'Bagel and cream cheese',
+        id: 9, 
+        name: 'Tarragon-Rubbed-Salmon',
         description: 'How we dream about your future',
         price: 6.99,
-        category: 'breakfast'
+        category: 'lunch',
+        imageUrl: 'https://i.ibb.co/KFGpLV3/lunch4.png'
     },
     {
-        id: 1, 
-        name: 'Bagel and cream cheese',
+        id: 10, 
+        name: 'Indian Lunch',
         description: 'How we dream about your future',
-        price: 6.99,
-        category: 'breakfast'
+        price: 8.99,
+        category: 'lunch',
+        imageUrl: 'https://i.ibb.co/M8VsGYm/lunch3.png'
     },
     {
-        id: 1, 
-        name: 'Bagel and cream cheese',
+        id: 11, 
+        name: 'Beef Steak',
         description: 'How we dream about your future',
-        price: 6.99,
-        category: 'breakfast'
+        price: 15.99,
+        category: 'lunch',
+        imageUrl: 'https://i.ibb.co/rFhHCzJ/lunch2.png'
     },
     {
-        id: 1, 
-        name: 'Bagel and cream cheese',
+        id: 12, 
+        name: 'Honey-Soy-Glazed Salmon with Peppers',
         description: 'How we dream about your future',
-        price: 6.99,
-        category: 'breakfast'
+        price: 7.99,
+        category: 'lunch',
+        imageUrl: 'https://i.ibb.co/YhQWZ6w/lunch1.png'
     },
     {
-        id: 1, 
-        name: 'Bagel and cream cheese',
+        id: 13, 
+        name: 'Salmon with Grapefruit and Lentil Salad',
         description: 'How we dream about your future',
-        price: 6.99,
-        category: 'breakfast'
+        price: 9.99,
+        category: 'dinner',
+        imageUrl: 'https://i.ibb.co/NWkrLh9/dinner6.png'
     },
     {
-        id: 1, 
-        name: 'Bagel and cream cheese',
+        id: 14, 
+        name: 'Lemony Salmon Piccata',
         description: 'How we dream about your future',
-        price: 6.99,
-        category: 'breakfast'
+        price: 10.99,
+        category: 'dinner',
+        imageUrl: 'https://i.ibb.co/gv6Tszr/dinner2.png'
     },
     {
-        id: 1, 
-        name: 'Bagel and cream cheese',
+        id: 15, 
+        name: 'Pork Tenderloin with Quinca Pilaf',
         description: 'How we dream about your future',
-        price: 6.99,
-        category: 'breakfast'
+        price: 12.99,
+        category: 'dinner',
+        imageUrl: 'https://i.ibb.co/Yj2MFmG/dinner1.png'
     },
     {
-        id: 1, 
-        name: 'Bagel and cream cheese',
+        id: 16, 
+        name: 'French Fries with Cheese',
         description: 'How we dream about your future',
-        price: 6.99,
-        category: 'breakfast'
+        price: 8.99,
+        category: 'dinner',
+        imageUrl: 'https://i.ibb.co/fHwxJN4/dinner3.png'
     },
     {
-        id: 1, 
-        name: 'Bagel and cream cheese',
+        id: 17, 
+        name: 'Garlic Butter baked Salmon',
         description: 'How we dream about your future',
         price: 6.99,
-        category: 'breakfast'
+        category: 'dinner',
+        imageUrl: 'https://i.ibb.co/16vYFpH/dinner4.png'
     },
     {
-        id: 1, 
-        name: 'Bagel and cream cheese',
+        id: 18, 
+        name: 'Baked Chicken',
         description: 'How we dream about your future',
-        price: 6.99,
-        category: 'breakfast'
+        price: 9.99,
+        category: 'dinner',
+        imageUrl: 'https://i.ibb.co/86Jj7WS/dinner5.png'
     },
-    {
-        id: 1, 
-        name: 'Bagel and cream cheese',
-        description: 'How we dream about your future',
-        price: 6.99,
-        category: 'breakfast'
-    },
-
 ]
+
+export default fakeData;
