@@ -9,6 +9,8 @@ import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import ShoppingCartOutlinedIcon from '@material-ui/icons/ShoppingCartOutlined';
 import { CartContext } from '../../App';
+import Slider from "react-slick";
+
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -22,10 +24,10 @@ const useStyles = makeStyles((theme) => ({
 
 const FoodDetail = () => {
     const classes = useStyles();
-
     const { foodId } = useParams();
     const item = fakeData.find(item => item.id === parseInt(foodId));
-    const { name, price, imageUrl} = item;
+    const [displayItem, setDisplayItem] = useState(item);
+    const { name, price, imageUrl, category } = displayItem;
     const [instruction, setInstruction] = useState();
 
     useEffect(() => {
@@ -38,7 +40,7 @@ const FoodDetail = () => {
     const [cart, setCart] = useContext(CartContext);
     const handleAddToCart = (item) => {
         let isItemAdded = cart.filter(foodItem => foodItem.id === item.id);
-        if(isItemAdded.length > 0){
+        if (isItemAdded.length > 0) {
             const newItem = [...cart];
             newItem.find(foodItem => foodItem.id === item.id).count = count;
             setCart(newItem)
@@ -47,8 +49,25 @@ const FoodDetail = () => {
             item.count = count;
             const newItem = [...cart, item];
             setCart(newItem)
-        } 
+        }
     }
+
+    const settings = {
+        className: "center",
+        centerMode: true,
+        infinite: true,
+        centerPadding: "0px",
+        slidesToShow: 2,
+        speed: 1000,
+        autoplay: true,
+        accessibility: true,
+        autoplaySpeed: 2000,
+        arrows: true,
+        draggable: true,
+        focusOnSelect: true,
+        pauseOnHover: true,
+        slidesToScroll: 1,        
+    };
 
     return (
         <Container fixed className={classes.root}>
@@ -61,19 +80,32 @@ const FoodDetail = () => {
                         {instruction}
                     </Typography>
                     <Typography className="price">
-                        ${price} 
+                        ${price}
                         <p className="count">
                             <span className="count-btn" onClick={() => setCount(count > 1 ? count - 1 : 0)}>-</span>
                             {count}
                             <span className="count-btn" onClick={() => setCount(count + 1)}>+</span>
                         </p>
                     </Typography>
-                    <Button 
-                        onClick={() => {handleAddToCart(item)}}
+                    <Button
+                        onClick={() => { handleAddToCart(item) }}
                         variant="contained" color="secondary" className="addToCartBtn"
                     >
-                        <ShoppingCartOutlinedIcon style={{marginRight: '5px'}}/> Add
+                        <ShoppingCartOutlinedIcon style={{ marginRight: '5px' }} /> Add
                     </Button>
+                    <div>
+                        <Slider {...settings}>
+                            {
+                                fakeData.filter(item => item.category === category).map(item => {
+                                    return (
+                                        <div>
+                                            <img onClick={() => setDisplayItem(item)} className="carousel-image" src={item.imageUrl} alt=""/>
+                                        </div>
+                                    );
+                                })
+                            }
+                        </Slider>
+                    </div>
                 </Grid>
                 <Grid item xs={12} sm={6}>
                     <img src={imageUrl} alt="" style={{ width: '95%', marginLeft: 'auto' }} />

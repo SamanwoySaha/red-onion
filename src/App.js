@@ -12,43 +12,46 @@ import NoMatch from './components/NoMatch/NoMatch';
 import FoodDetail from './components/FoodDetail/FoodDetail';
 import Cart from './components/Cart/Cart';
 import ShippingDetail from './components/ShippingDetail/ShippingDetail';
-import Login from './Login/Login';
+import Login from './components/Login/Login';
 
 export const CartContext = createContext();
+export const ShippingContext = createContext();
 
 function App() {
   const [cart, setCart] = useState([]);
   const [shippingInfo, setShippingInfo] = useState({});
 
   return (
-    <CartContext.Provider value={[cart, setCart, shippingInfo, setShippingInfo]} className="app">
-      <Router>
-        <Header></Header>
-        <Banner></Banner>
-        <Switch>
-          <Route path="/shop">
-            <Shop></Shop>
-          </Route>
-          <Route path="/foodDetail/:foodId">
-            <FoodDetail></FoodDetail>
-          </Route>
-          <Route path="/cart">
-            <Cart></Cart>
-          </Route>
-          <Route path="/shipping">
-            <ShippingDetail></ShippingDetail>
-          </Route>
-          <Route path="/login">
-            <Login></Login>
-          </Route>
-          <Route exact path="/">
-            <Shop></Shop>
-          </Route>
-          <Route path="*">
-            <NoMatch></NoMatch>
-          </Route>
-        </Switch>
-      </Router>
+    <CartContext.Provider value={[cart, setCart]} className="app">
+      <ShippingContext.Provider value={[shippingInfo, setShippingInfo]}>
+        <Router>
+          <Header></Header>
+          <Banner></Banner>
+          <Switch>
+            <Route path="/shop">
+              <Shop></Shop>
+            </Route>
+            <Route path="/foodDetail/:foodId">
+              <FoodDetail></FoodDetail>
+            </Route>
+            <Route path="/cart">
+              <Cart></Cart>
+            </Route>
+            <Route path="/shipping">
+              <ShippingDetail></ShippingDetail>
+            </Route>
+            <Route path="/login">
+              <Login></Login>
+            </Route>
+            <Route exact path="/">
+              <Shop></Shop>
+            </Route>
+            <Route path="*">
+              <NoMatch></NoMatch>
+            </Route>
+          </Switch>
+        </Router>
+      </ShippingContext.Provider>
     </CartContext.Provider>
   );
 }
