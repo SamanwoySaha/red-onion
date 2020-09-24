@@ -17,3 +17,7 @@
 .shop {
     margin-bottom: 20px;
 }
+
+.categoryHighlight {
+    border-bottom: 4px solid tomato;
+}

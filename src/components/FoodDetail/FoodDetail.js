@@ -45,12 +45,14 @@ const FoodDetail = () => {
             newCart.find(foodItem => foodItem.id === item.id).count = count;
             console.log(newCart);
             setCart(newCart)
+            setCount(1);
         }
         else {
             item.count = count;
             const newCart = [...cart, item];
             console.log(newCart);
-            setCart(newCart)
+            setCart(newCart);
+            setCount(1);
         }
     }
 
@@ -101,7 +103,7 @@ const FoodDetail = () => {
                                 fakeData.filter(item => item.category === category).map(item => {
                                     return (
                                         <div>
-                                            <img onClick={() => setDisplayItem(item)} className="carousel-image" src={item.imageUrl} alt=""/>
+                                            <img onClick={() => {setDisplayItem(item); setCount(1)}} className="carousel-image" src={item.imageUrl} alt=""/>
                                         </div>
                                     );
                                 })

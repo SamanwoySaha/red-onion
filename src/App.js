@@ -32,7 +32,6 @@ function App() {
           <Switch>
             <Route path="/shop">
               <Shop></Shop>
-              <About></About>
             </Route>
             <Route path="/foodDetail/:foodId">
               <FoodDetail></FoodDetail>
@@ -48,12 +47,12 @@ function App() {
             </Route>
             <Route exact path="/">
               <Shop></Shop>
-              <About></About>
             </Route>
             <Route path="*">
               <NoMatch></NoMatch>
             </Route>
           </Switch>
+          <About></About>
           <Footer></Footer>
         </Router>
       </ShippingContext.Provider>
