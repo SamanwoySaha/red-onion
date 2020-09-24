@@ -1,11 +1,12 @@
 import React, { useContext } from 'react';
-import { CartContext } from '../../App';
+import { CartContext, ShippingContext } from '../../App';
 import Container from '@material-ui/core/Container';
 import Grid from '@material-ui/core/Grid';
 import { makeStyles } from '@material-ui/core/styles';
 import './Cart.css';
 import { Button } from '@material-ui/core';
 import { useHistory } from 'react-router-dom';
+import { useForm } from "react-hook-form";
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -26,17 +27,18 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const Cart = () => {
+    const { register, handleSubmit, watch, errors } = useForm();
     const classes = useStyles();
-    const [cart, setCart, shippingInfo, setShippingInfo] = useContext(CartContext);
+    const [cart, setCart] = useContext(CartContext);
+    const [shippingInfo, setShippingInfo] = useContext(ShippingContext);
 
-    const handleSubmit = e => {
-        
-        e.preventDefault();
-    }
+    const onSubmit = data => {
+        console.log(data);
+    };
 
     const history = useHistory();
     const handlePlaceOrder = e => {
-        if(cart.length > 0) {
+        if(cart.length > 0 && shippingInfo) {
             history.push('/shipping');
         }
         e.preventDefault();
@@ -55,12 +57,17 @@ const Cart = () => {
                 <Grid item xs={12} sm={6} className={classes.centerAlign}>
                     <h2>Edit Delivery Details</h2>
                     <div className="border-line"></div>
-                    <form onSubmit={handleSubmit}>
-                        <input type="text" name="AddressLine1" placeholder="Address Line 1"/>
-                        <input type="text" name="AddressLine2" placeholder="Address Line 2"/>
-                        <input type="text" name="Business Name" placeholder="Business Name"/>
-                        <input type="text" name="Phone" placeholder="Phone Number"/>
-                        <input type="text" name="Delivery Instructor" placeholder="Add Delivery Instructor"/>
+                    <form onSubmit={handleSubmit(onSubmit)}>
+                        <input type="text" name="AddressLine1" ref={register({ required: true })} placeholder="Address Line 1"/>
+                        {errors.AddressLine1 && <p style={{color: 'red', paddingBottom: '10px'}}>This field is required</p>}
+                        <input type="text" name="AddressLine2" ref={register({ required: true })} placeholder="Address Line 2"/>
+                        {errors.AddressLine2 && <p style={{color: 'red', paddingBottom: '10px'}}>This field is required</p>}
+                        <input type="text" name="BusinessName" ref={register({ required: true })} placeholder="Business Name"/>
+                        {errors.BusinessName && <p style={{color: 'red', paddingBottom: '10px'}}>This field is required</p>}
+                        <input type="text" name="Phone" ref={register({ required: true })} placeholder="Phone Number"/>
+                        {errors.Phone && <p style={{color: 'red', paddingBottom: '10px'}}>This field is required</p>}
+                        <input type="text" name="DeliveryInstructor" ref={register({ required: true })} placeholder="Add Delivery Instructor"/>
+                        {errors.DeliveryInstructor && <p style={{color: 'red', paddingBottom: '10px'}}>This field is required</p>}
                         <input className={classes.submitBtn} type="submit" value="Save & Continue"/>
                     </form>
                 </Grid>
@@ -88,7 +95,7 @@ const Cart = () => {
                     <p className="calculation">Tax: <span className="amount">${tax}</span></p>
                     <p className="calculation">Delivery fee: <span className="amount">${deliveryFee}</span></p>
                     <p className="calculation">Total: <span className="amount">${total}</span></p>
-                    <Button className="order-btn" variant="contained" color="secondary" onClick={handlePlaceOrder}>Place Order</Button>
+                    <Button className="order-btn" variant="contained" color={shippingInfo ? "secondary" : ""} onClick={handlePlaceOrder}>Place Order</Button>
                 </Grid>
             </Grid>
         </Container>

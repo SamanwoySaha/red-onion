@@ -39,16 +39,18 @@ const FoodDetail = () => {
     const [count, setCount] = useState(1);
     const [cart, setCart] = useContext(CartContext);
     const handleAddToCart = (item) => {
-        let isItemAdded = cart.filter(foodItem => foodItem.id === item.id);
-        if (isItemAdded.length > 0) {
-            const newItem = [...cart];
-            newItem.find(foodItem => foodItem.id === item.id).count = count;
-            setCart(newItem)
+        let newItem = cart.find(foodItem => foodItem.id === item.id);
+        if (newItem) {
+            const newCart = [...cart];
+            newCart.find(foodItem => foodItem.id === item.id).count = count;
+            console.log(newCart);
+            setCart(newCart)
         }
         else {
             item.count = count;
-            const newItem = [...cart, item];
-            setCart(newItem)
+            const newCart = [...cart, item];
+            console.log(newCart);
+            setCart(newCart)
         }
     }
 
@@ -82,13 +84,13 @@ const FoodDetail = () => {
                     <Typography className="price">
                         ${price}
                         <p className="count">
-                            <span className="count-btn" onClick={() => setCount(count > 1 ? count - 1 : 0)}>-</span>
+                            <span className="count-btn" onClick={() => setCount(count > 1 ? count - 1 : 1)}>-</span>
                             {count}
                             <span className="count-btn" onClick={() => setCount(count + 1)}>+</span>
                         </p>
                     </Typography>
                     <Button
-                        onClick={() => { handleAddToCart(item) }}
+                        onClick={() => { handleAddToCart(displayItem) }}
                         variant="contained" color="secondary" className="addToCartBtn"
                     >
                         <ShoppingCartOutlinedIcon style={{ marginRight: '5px' }} /> Add

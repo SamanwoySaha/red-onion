@@ -1,3 +1,24 @@
+export const featureFakeData = [
+    {
+        id: 1,
+        name: 'Fast Delivery',
+        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ',
+        imageUrl: 'https://i.ibb.co/yPtwr7K/Screenshot-7.png'
+    },
+    {
+        id: 2,
+        name: 'A Good Auto Responder',
+        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et',
+        imageUrl: 'https://i.ibb.co/3MHKg1b/Screenshot-1.png'
+    },
+    {
+        id: 3,
+        name: 'Home Delivery',
+        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod',
+        imageUrl: 'https://i.ibb.co/dt14hJB/Screenshot-2.png'
+    }
+];
+
 const fakeData = [
     {
         id: 1, 

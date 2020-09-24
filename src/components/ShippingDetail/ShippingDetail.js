@@ -19,27 +19,29 @@ const ShippingDetail = () => {
                 </Grid>
                 <Grid item xs={4} className="shipping-info-text">
                     <img src="https://i.ibb.co/gFV8sjt/Group-1151.png" className="icon" alt="icon" />
-                    <Timeline className="timeline">
-                        <TimelineItem>
-                            <TimelineSeparator>
-                                <TimelineDot color="secondary"/>
-                                <TimelineConnector />
-                            </TimelineSeparator>
-                            <TimelineContent>
-                                <h4>Your Location</h4>
-                                <p>101 B. Nag Lane, Bandar, Chittagong</p>
-                            </TimelineContent>
-                        </TimelineItem>
-                        <TimelineItem>
-                            <TimelineSeparator>
-                                <TimelineDot color="secondary"/>
-                            </TimelineSeparator>
-                            <TimelineContent>
-                                <h4>Shop Address</h4>
-                                <p>10, Zakir Hossain Road, Chittagong</p>
-                            </TimelineContent>
-                        </TimelineItem>
-                    </Timeline>
+                    <div className="timeline-container">
+                        <Timeline className="timeline">
+                            <TimelineItem>
+                                <TimelineSeparator>
+                                    <TimelineDot color="secondary" />
+                                    <TimelineConnector />
+                                </TimelineSeparator>
+                                <TimelineContent>
+                                    <h4>Your Location</h4>
+                                    <p>101 B. Nag Lane, Bandar, Chittagong</p>
+                                </TimelineContent>
+                            </TimelineItem>
+                            <TimelineItem>
+                                <TimelineSeparator>
+                                    <TimelineDot color="secondary" />
+                                </TimelineSeparator>
+                                <TimelineContent>
+                                    <h4>Shop Address</h4>
+                                    <p>10, Zakir Hossain Road, Chittagong</p>
+                                </TimelineContent>
+                            </TimelineItem>
+                        </Timeline>
+                    </div>
                     <h2>09:30 AM</h2>
                     <p>Estimated Delivery Time</p>
                     <div className="user-info">

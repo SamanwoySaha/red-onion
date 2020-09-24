@@ -34,11 +34,14 @@ const Shop = () => {
     }
 
     return (
-        <div>
+        <div className="shop">
             <Typography className={classes.category}>
-                <Link className='singleCategory' onClick={() => setCurrentCategory('breakfast')}>Breakfast</Link>
-                <Link className='singleCategory' onClick={() => setCurrentCategory('lunch')} >Lunch</Link>
-                <Link className='singleCategory' onClick={() => setCurrentCategory('dinner')} >Dinner</Link>
+                <Link 
+                    className={`singleCategory ${currentCategory === 'breakfast' ? 'categoryHighlight' : '' }`} 
+                    onClick={() => setCurrentCategory('breakfast')}
+                    >Breakfast</Link>
+                <Link className={`singleCategory ${currentCategory === 'lunch' ? 'categoryHighlight' : '' }`} onClick={() => setCurrentCategory('lunch')} >Lunch</Link>
+                <Link className={`singleCategory ${currentCategory === 'dinner' ? 'categoryHighlight' : '' }`} onClick={() => setCurrentCategory('dinner')} >Dinner</Link>
             </Typography>
             <Container className={classes.cardGrid} maxWidth="lg">
                 <Grid container spacing={10}>
@@ -47,14 +50,14 @@ const Shop = () => {
                             .map(item => <Food key={item.id} item={item}></Food>)
                     }
                 </Grid>
+            </Container>
                 <Button 
                     variant="contained" 
-                    color="secondary" 
+                    color={cart.length > 0 ? "secondary" : ""}
                     onClick= {handleCheckout}
                     className='checkoutBtn'>
                     Checkout Your Food
                 </Button>
-            </Container>
         </div>
     );
 };

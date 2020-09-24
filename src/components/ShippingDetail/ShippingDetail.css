@@ -17,10 +17,17 @@
 
 .icon {
     width: 30%;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%) !important;
 }
 
-.timeline {
-    margin: 20px auto;
+.MuiTimelineItem-missingOppositeContent::before {
+    display: none;
+}
+
+.timeline-container {
+    margin: 20px 0;
     background-color: white !important;
     border-radius: 10px !important;
     padding: 20px !important;

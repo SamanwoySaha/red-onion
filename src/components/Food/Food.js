@@ -38,7 +38,7 @@ const Food = ({item}) => {
     }
 
     return (
-        <Grid item xs={12} sm={6} md={4}>
+        <Grid item xs={12} sm={6} md={4} className="food-container">
             <Card className={[classes.card, 'foodItem'].join(' ')} onClick={() => handleClick(id)}>
                 <CardMedia
                     className={[classes.cardMedia, 'foodImg'].join(' ')}
@@ -46,14 +46,14 @@ const Food = ({item}) => {
                     title="Image title"
                 />
                 <CardContent className={classes.cardContent}>
-                    <Typography gutterBottom variant="h5" component="h2">
+                    <Typography gutterBottom variant="h5" component="h2" className="food-title">
                         {name}
                     </Typography>
-                    <Typography>
+                    <Typography className="food-description">
                         {description}
                     </Typography>
-                    <Typography>
-                        {price}
+                    <Typography className="food-price">
+                        ${price}
                     </Typography>
                 </CardContent>
             </Card>

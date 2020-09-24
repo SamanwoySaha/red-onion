@@ -1,0 +1,57 @@
+.feature-container {
+    box-shadow: none !important;
+    transition: all linear 0.4s !important;
+}
+
+.feature-container:hover {
+    box-shadow: 2px 2px 20px rgb(221, 221, 221) !important;
+}
+
+.feature-title {
+    font-size: 20px !important;
+    font-family: 'Segoe UI' !important;
+    font-weight: 600;
+    color: #222 !important;
+    margin-bottom: 10px !important;
+    text-align:  left !important;
+}
+
+.feature-description {
+    color: rgb(139, 139, 139) !important;
+    font-weight: normal;
+    font-family: 'Segoe UI' !important;
+    font-size: 14px !important;
+    text-align:  left !important;
+    margin-bottom: 10px !important;
+}
+
+.seeMore-btn{
+    background:white;
+    border: none !important;
+    color: rgb(86, 86, 255) !important;
+    position: relative;
+    left: -102px !important;
+    padding-right: 25px !important;  
+    padding-left: 25px !important;  
+}
+
+.MuiButton-text.seeMore-btn:hover {
+    background-color: none !important;
+}
+
+.seeMore-icon{
+    width: 12% !important;
+    margin-left: 5px;
+}
+
+.feature-icon {
+    border-radius: 50%;
+    background-color: rgb(255, 87, 58);
+    color: white !important;
+    padding: 8px;
+    margin-right: 15px !important;
+}
+
+.feature-info {
+    display: flex;
+}

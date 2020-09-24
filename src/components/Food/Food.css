@@ -1,7 +1,44 @@
 .foodItem {
     box-shadow: none !important;
+    margin-bottom: -30px;
 }
 
 .foodImg {
-    margin-bottom: 10px;
+    margin-top: -60px;
+    margin-bottom: -70px;
+}
+
+.food-container {
+    transition: all linear 0.4s;
+}
+
+.food-container:hover {
+    box-shadow: 2px 2px 30px rgb(241, 241, 241);
+}
+
+.MuiCardMedia-root{
+    transform: scale(0.6)
+}
+
+.food-title {
+    font-size: 22px !important;
+    font-family: 'Segoe UI', serif !important;
+    font-weight: 600 !important;
+    color: #222 !important;
+    width: 80%;
+    margin: 0 auto !important;
+    margin-bottom: 5px !important;
+}
+
+.food-description {
+    font-size: 14px !important;
+    font-weight: normal !important;
+    color: rgb(148, 148, 148) !important;
+}
+
+.food-price {
+    font-size: 24px !important;
+    font-weight: bold !important;
+    font-family: 'Segoe UI' !important;
+    color: #222 !important;
 }

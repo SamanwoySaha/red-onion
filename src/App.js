@@ -13,6 +13,8 @@ import FoodDetail from './components/FoodDetail/FoodDetail';
 import Cart from './components/Cart/Cart';
 import ShippingDetail from './components/ShippingDetail/ShippingDetail';
 import Login from './components/Login/Login';
+import About from './components/About/About';
+import Footer from './components/Footer/Footer';
 
 export const CartContext = createContext();
 export const ShippingContext = createContext();
@@ -30,6 +32,7 @@ function App() {
           <Switch>
             <Route path="/shop">
               <Shop></Shop>
+              <About></About>
             </Route>
             <Route path="/foodDetail/:foodId">
               <FoodDetail></FoodDetail>
@@ -45,11 +48,13 @@ function App() {
             </Route>
             <Route exact path="/">
               <Shop></Shop>
+              <About></About>
             </Route>
             <Route path="*">
               <NoMatch></NoMatch>
             </Route>
           </Switch>
+          <Footer></Footer>
         </Router>
       </ShippingContext.Provider>
     </CartContext.Provider>
