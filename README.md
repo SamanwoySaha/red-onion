@@ -14,6 +14,17 @@ A Single Page Restaurant Web App which offers Breakfast, Lunch, Dinner with diff
 - Added form validation with react hook.
 - Firebase Authentication.
 
+### Technologies
+- React
+- Context API
+- React hook
+- React Router
+- Material UI 
+- Google Map API
+- Html5
+- CSS3
+- Firebase
+
 ### Dependencies
 - React
 - react hook form
