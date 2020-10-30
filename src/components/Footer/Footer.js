@@ -38,9 +38,9 @@ const Footer = () => {
                 <div className="footer-container">
                     <p style={{color: 'lightgrey'}}>Copyright &copy; 2020. Online Food.</p>
                     <div style={{ marginLeft: 'auto' }}>
-                        <Link className="footer-bottom-link-text">Privacy Policy</Link>
-                        <Link className="footer-bottom-link-text">Terms of Use</Link>
-                        <Link className="footer-bottom-link-text">Pricing</Link>
+                        <Link to="/" className="footer-bottom-link-text">Privacy Policy</Link>
+                        <Link to="/" className="footer-bottom-link-text">Terms of Use</Link>
+                        <Link to="/" className="footer-bottom-link-text">Pricing</Link>
                     </div>
                 </div>
             </Container>

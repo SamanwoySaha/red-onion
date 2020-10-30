@@ -51,7 +51,7 @@ const Feature = (props) => {
                                     : null
                     }
                     <div>
-                        <h4 gutterBottom variant="h5" component="h2" className="feature-title">
+                        <h4 variant="h5" component="h2" className="feature-title">
                             {name}
                         </h4>
                         <p className="feature-description">

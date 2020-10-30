@@ -27,7 +27,7 @@ const Shop = () => {
     const [cart, setCart] = useContext(CartContext);
     const history = useHistory();
     const handleCheckout = () => {
-        if(cart.length > 0){
+        if (cart.length > 0) {
             history.push('/cart')
         }
         return;
@@ -36,12 +36,12 @@ const Shop = () => {
     return (
         <div className="shop">
             <Typography className={classes.category}>
-                <Link 
-                    className={`singleCategory ${currentCategory === 'breakfast' ? 'categoryHighlight' : '' }`} 
+                <Link
+                    className={`singleCategory ${currentCategory === 'breakfast' ? 'categoryHighlight' : ''}`}
                     onClick={() => setCurrentCategory('breakfast')}
-                    >Breakfast</Link>
-                <Link className={`singleCategory ${currentCategory === 'lunch' ? 'categoryHighlight' : '' }`} onClick={() => setCurrentCategory('lunch')} >Lunch</Link>
-                <Link className={`singleCategory ${currentCategory === 'dinner' ? 'categoryHighlight' : '' }`} onClick={() => setCurrentCategory('dinner')} >Dinner</Link>
+                >Breakfast</Link>
+                <Link className={`singleCategory ${currentCategory === 'lunch' ? 'categoryHighlight' : ''}`} onClick={() => setCurrentCategory('lunch')} >Lunch</Link>
+                <Link className={`singleCategory ${currentCategory === 'dinner' ? 'categoryHighlight' : ''}`} onClick={() => setCurrentCategory('dinner')} >Dinner</Link>
             </Typography>
             <Container className={classes.cardGrid} maxWidth="lg">
                 <Grid container spacing={10}>
@@ -51,13 +51,13 @@ const Shop = () => {
                     }
                 </Grid>
             </Container>
-                <Button 
-                    variant="contained" 
-                    color={cart.length > 0 ? "secondary" : ""}
-                    onClick= {handleCheckout}
-                    className='checkoutBtn'>
-                    Checkout Your Food
-                </Button>
+            <Button
+                variant="contained"
+                color={cart.length > 0 ? "secondary" : ""}
+                onClick={handleCheckout}
+                className='checkoutBtn'>
+                Checkout Your Food
+            </Button>
         </div>
     );
 };

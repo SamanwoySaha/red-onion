@@ -1,0 +1,26 @@
+.cartItem {
+    background-color:#F5F5F5;
+    padding: 10px;
+    display: flex;
+    border-radius: 20px;
+    margin: 10px 0;
+}
+
+.cart-image {
+    width: 70%;
+}
+
+.quantity, .itemInfo {
+    align-self: center;
+}
+
+.quantity {
+    margin-left: 20px !important;
+    justify-content: flex-end !important;
+}
+.quantity-text {
+    background-color: white;
+    border-radius: 8px;
+    padding: 5px;
+    margin: 0 7px;
+}

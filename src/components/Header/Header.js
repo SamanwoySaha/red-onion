@@ -7,7 +7,7 @@ import IconButton from '@material-ui/core/IconButton';
 import './Header.css';
 import { Container } from '@material-ui/core';
 import ShoppingCartOutlinedIcon from '@material-ui/icons/ShoppingCartOutlined';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -33,6 +33,11 @@ const btnSpacing = {
 
 const Header = () => {
     const classes = useStyles();
+    const history = useHistory();
+
+    const handleClick = () => {
+        history.push('/login');
+    }
 
     return (
         <div className={classes.root}>
@@ -45,8 +50,8 @@ const Header = () => {
                             </Link>
                         </IconButton>
                         <ShoppingCartOutlinedIcon className={classes.cartIcon} />
-                        <Button style={btnSpacing}>Login</Button>
-                        <Button style={btnSpacing} variant="contained" color="secondary" className="main-button">Sign up</Button>
+                        <Button onClick={handleClick} style={btnSpacing}>Login</Button>
+                        <Button onClick={handleClick} style={btnSpacing} variant="contained" color="secondary" className="main-button">Sign up</Button>
                     </Toolbar>
                 </Container>
             </AppBar>

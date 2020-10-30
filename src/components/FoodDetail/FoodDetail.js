@@ -43,14 +43,12 @@ const FoodDetail = () => {
         if (newItem) {
             const newCart = [...cart];
             newCart.find(foodItem => foodItem.id === item.id).count = count;
-            console.log(newCart);
             setCart(newCart)
             setCount(1);
         }
         else {
             item.count = count;
             const newCart = [...cart, item];
-            console.log(newCart);
             setCart(newCart);
             setCount(1);
         }
